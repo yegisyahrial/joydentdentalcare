@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joydent Dental Care - Praktik Dokter Gigi Palangkaraya</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS untuk Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        :root {
+            --brand-gold: #c5a059;
+            --brand-gold-dark: #a37f3a;
+            --brand-navy: #1e293b;
+            --brand-cream: #faf8f5;
+            --brand-soft-gold: #f7f3ea;
+            --whatsapp-color: #25d366;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --shadow-soft: 0 10px 30px rgba(197, 160, 89, 0.08);
+            --shadow-hover: 0 20px 40px rgba(197, 160, 89, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-main);
+            background-color: var(--brand-cream);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Announcement Bar Top */
+        .top-announcement {
+            background: linear-gradient(90deg, var(--brand-navy), var(--brand-gold-dark));
+            color: var(--white);
+            text-align: center;
+            padding: 0.6rem 1rem;
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 6%;
+            max-width: 1280px;
+            margin: auto;
+        }
+
+        /* Logo Gambar Saja Tanpa Teks */
+        .logo-img-only {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img-only img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img-only img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--brand-navy);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--brand-gold);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: var(--brand-gold);
+            color: var(--white);
+            padding: 0.7rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: var(--brand-gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(163, 127, 58, 0.4);
+        }
+
+        .btn-wa-style {
+            background: var(--whatsapp-color);
+            color: var(--white);
+            padding: 0.7rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-wa-style:hover {
+            background: #1eb954;
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--brand-navy);
+            cursor: pointer;
+        }
+
+        /* Hero Section Modern */
+        .hero-modern {
+            padding: 4rem 6% 5rem;
+            max-width: 1280px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--brand-soft-gold);
+            color: var(--brand-gold-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.1rem;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--brand-navy);
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-content h1 span {
+            color: var(--brand-gold);
+            background: linear-gradient(120deg, var(--brand-gold), var(--brand-gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .rating-badge {
+            margin-top: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-soft);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--brand-navy);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image-card {
+            width: 100%;
+            height: 450px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .hero-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .floating-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--white);
+            padding: 1.2rem 1.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 4px solid var(--brand-gold);
+        }
+
+        .floating-badge i {
+            font-size: 2rem;
+            color: var(--brand-gold);
+        }
+
+        .floating-badge div h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--brand-navy);
+        }
+
+        .floating-badge div p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Info Grid Section */
+        .info-grid-section {
+            padding: 2rem 6%;
+            max-width: 1280px;
+            margin: 0 auto 4rem;
+        }
+
+        .info-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-box {
+            background: var(--white);
+            padding: 1.8rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid #f1ece1;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--brand-gold);
+        }
+
+        .info-box i {
+            width: 50px;
+            height: 50px;
+            background: var(--brand-soft-gold);
+            color: var(--brand-gold-dark);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .info-box h3 {
+            font-size: 1.05rem;
+            color: var(--brand-navy);
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .info-box p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Section Headings */
+        .section-title {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-title span {
+            color: var(--brand-gold-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: var(--brand-navy);
+            line-height: 1.3;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 5rem 6%;
+            max-width: 1280px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .about-img-box {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+        }
+
+        .about-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-text-content span {
+            color: var(--brand-gold-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-text-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--brand-navy);
+            line-height: 1.3;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-text-content p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .about-list li {
+            font-size: 0.95rem;
+            color: var(--brand-navy);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-list li i {
+            color: var(--brand-gold);
+            font-size: 1.1rem;
+        }
+
+        /* Services Grid Cards */
+        .services-section {
+            background: var(--white);
+            padding: 5rem 6%;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1280px;
+            margin: auto;
+        }
+
+        .service-card-modern {
+            background: var(--brand-cream);
+            border-radius: var(--radius-lg);
+            padding: 2.2rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #f1ece1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-gold), var(--brand-gold-dark));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-card-modern:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card-modern:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            color: var(--brand-gold-dark);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .service-card-modern h3 {
+            font-size: 1.25rem;
+            color: var(--brand-navy);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .service-card-modern p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            color: var(--brand-gold-dark);
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s;
+        }
+
+        .service-link:hover {
+            gap: 10px;
+            color: var(--brand-gold);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 5rem 6%;
+            max-width: 1280px;
+            margin: auto;
+        }
+
+        .features-flex {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid #f1ece1;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            color: var(--brand-navy);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-item h3 i {
+            color: var(--brand-gold);
+        }
+
+        .feature-item p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        /* Doctor Carousel Section */
+        .doctors-section {
+            background: var(--white);
+            padding: 5rem 6%;
+        }
+
+        .swiper-container-doctors {
+            max-width: 1280px;
+            margin: auto;
+            padding-bottom: 3rem;
+        }
+
+        .doctor-box {
+            background: var(--brand-cream);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid #f1ece1;
+            text-align: center;
+            height: 100%;
+        }
+
+        .doctor-box img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .doctor-box-info {
+            padding: 1.5rem;
+        }
+
+        .doctor-box-info h3 {
+            font-size: 1.1rem;
+            color: var(--brand-navy);
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .doctor-box-info p {
+            font-size: 0.9rem;
+            color: var(--brand-gold-dark);
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 6%;
+        }
+
+        .faq-wrapper {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .faq-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .faq-btn {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--brand-navy);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .faq-btn:hover, .faq-btn.active {
+            color: var(--brand-gold-dark);
+        }
+
+        .faq-btn i {
+            transition: transform 0.3s;
+            color: var(--brand-gold);
+        }
+
+        .faq-btn.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .faq-content p {
+            padding-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Social Media Banner */
+        .social-banner-section {
+            background: var(--white);
+            padding: 4rem 6%;
+            text-align: center;
+        }
+
+        .social-cards-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .social-card {
+            background: var(--brand-cream);
+            border: 1px solid #f1ece1;
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--brand-navy);
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover {
+            transform: translateY(-3px);
+            background: var(--brand-soft-gold);
+            border-color: var(--brand-gold);
+        }
+
+        .social-card i {
+            font-size: 1.5rem;
+        }
+
+        .social-card.tiktok i {
+            color: #000000;
+        }
+
+        .social-card.instagram i {
+            color: #e1306c;
+        }
+
+        /* Location Section */
+        .location-section {
+            padding: 5rem 6%;
+            background: var(--brand-cream);
+        }
+
+        .location-container {
+            max-width: 1280px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .location-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--brand-navy);
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .location-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .location-item i {
+            color: var(--brand-gold-dark);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .map-frame {
+            width: 100%;
+            min-height: 320px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Modern Footer */
+        footer {
+            background: var(--brand-navy);
+            color: var(--white);
+            padding: 4rem 6% 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1280px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1.2fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-logo-img {
+            height: 55px;
+            width: auto;
+            margin-bottom: 1.2rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-about p {
+            color: #94a3b8;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--brand-gold);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 10px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-contact-item i {
+            color: var(--brand-gold);
+        }
+
+        .copyright-text {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.88rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 992px) {
+            .hero-modern, .about-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-image-card {
+                height: 350px;
+            }
+            .floating-badge {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 85%;
+            }
+            .location-container {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 1.5rem 6%;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .btn-primary.nav-btn {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Announcement Bar Top -->
+    <div class="top-announcement">
+        ✨ Your Smile is Our Priority — Dental Care & Esthetic Dentist Palangkaraya
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar">
+            <!-- Logo Gambar Saja Tanpa Teks -->
+            <a href="#" class="logo-img-only">
+                <img src="logo.png" alt="Logo Joydent Dental Care">
+            </a>
+
+            <!-- Menu Navigasi -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#keunggulan">Keunggulan</a></li>
+                <li><a href="#dokter">Dokter</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#lokasi">Lokasi</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="https://api.whatsapp.com/send/?phone=62895340872504" target="_blank" class="btn-primary nav-btn">
+                    <i class="fas fa-calendar-check"></i> Reservasi
+                </a>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Modern Hero Section -->
+    <section class="hero-modern" id="beranda">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-sparkles"></i> Dental Care & Esthetic Dentist
+            </div>
+            <h1>Your Smile is Our Priority ✨ <span>Joydent Dental Care</span></h1>
+            <p>Praktik Dokter Gigi & Estetika Gigi terpercaya di Palangkaraya. Menghadirkan pelayanan kesehatan gigi modern, nyaman, dan hasil estetis yang memukau.</p>
+            
+            <div class="hero-buttons">
+                <a href="https://api.whatsapp.com/send/?phone=62895340872504" target="_blank" class="btn-primary">
+                    <i class="fas fa-calendar-alt"></i> Reservasi Online
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=62895340872504" target="_blank" class="btn-wa-style">
+                    <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                </a>
+            </div>
+
+            <div class="rating-badge">
+                <i class="fas fa-star" style="color: #f59e0b;"></i>
+                <span>Google Rating 5.0 (188 Ulasan Pasien)</span>
+            </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+            <div class="hero-image-card">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Joydent Dental Care Palangkaraya">
+            </div>
+            <div class="floating-badge">
+                <i class="fas fa-tooth"></i>
+                <div>
+                    <h4>Perawatan Estetika & Gigi</h4>
+                    <p>Buka Setiap Hari (Senin-Minggu)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Cards Banner Grid -->
+    <section class="info-grid-section">
+        <div class="info-cards-container">
+            <div class="info-box">
+                <i class="far fa-clock"></i>
+                <div>
+                    <h3>Jam Operasional</h3>
+                    <p>Senin - Sabtu: 09.00 - 21.00 WIB<br>Minggu: 15.00 - 21.00 WIB</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3>Lokasi Praktik</h3>
+                    <p>Indomaret Point Rajawali (Belakang), Jl. Rajawali Induk No.03 KM.4,5, Palangkaraya</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                    <h3>Kontak Reservasi</h3>
+                    <p>WhatsApp: +62 895-3408-72504<br>Fast Response Chat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tentang Kami -->
+    <section class="about-section" id="tentang">
+        <div class="about-img-box">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tentang Joydent Dental Care">
+        </div>
+        <div class="about-text-content">
+            <span>Tentang Kami</span>
+            <h2>Praktik Dokter Gigi & Estetika Gigi Terbaik di Palangkaraya</h2>
+            <p>Joydent Dental Care Palangkaraya berkomitmen untuk memberikan pelayanan perawatan gigi serta estetik gigi berkualitas tinggi. Kami percaya bahwa senyum sehat yang indah adalah aset berharga untuk meningkatkan kepercayaan diri Anda.</p>
+            <p>Dengan fasilitas yang bersih, nyaman, dan teknologi terkini, tim dokter kami siap melayani seluruh anggota keluarga Anda dengan ramah dan telaten.</p>
+            
+            <ul class="about-list">
+                <li><i class="fas fa-check-circle"></i> Dokter Gigi Berpengalaman & Spesialis Estetika</li>
+                <li><i class="fas fa-check-circle"></i> Fasilitas Bersih, Higenis & Sterilisasi Terjamin</li>
+                <li><i class="fas fa-check-circle"></i> Lokasi Mudah Ditemukan di Belakang Indomaret Point Rajawali</li>
+                <li><i class="fas fa-check-circle"></i> Pelayanan Buka Setiap Hari (Termasuk Hari Minggu)</li>
+            </ul>
+
+            <a href="https://api.whatsapp.com/send/?phone=62895340872504" target="_blank" class="btn-wa-style">
+                <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Layanan Kami Grid Cards -->
+    <section class="services-section" id="layanan">
+        <div class="section-title">
+            <span>Layanan Unggulan</span>
+            <h2>Perawatan & Estetika Gigi Lengkap</h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card-modern">
+                <div>
+                    <div class="service-icon"><i class="fas fa-magic"></i></div>
+                    <h3>Esthetic Dentistry</h3>
+                    <p>Perawatan estetika gigi seperti veneer dan bleaching untuk senyum cantik, bersih, dan menawan.</p>
+                </div>
+                <a href="https://api.whatsapp.com/send/?phone=62895340872504&text=Halo%20Admin%20Joydent,%20saya%20ingin%20tanya%20layanan%20Esthetic%20Dentistry" class="service-link" target="_blank">Konsultasi Layanan <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card-modern">
+                <div>
+                    <div class="service-icon"><i class="fas fa-teeth"></i></div>
+                    <h3>Behel Gigi (Orthodontics)</h3>
+                    <p>Perataan posisi gigi yang tidak teratur menggunakan behel medis berkualitas demi senyum simetris.</p>
+                </div>
+                <a href="https://api.whatsapp.com/send/?phone=62895340872504&text=Halo%20Admin%20Joydent,%20saya%20ingin%20tanya%20layanan%20Behel%20Gigi" class="service-link" target="_blank">Konsultasi Layanan <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card-modern">
+                <div>
+                    <div class="service-icon"><i class="fas fa-tooth"></i></div>
+                    <h3>Scaling & Pembersihan Karang</h3>
+                    <p>Membersihkan plak dan karang gigi secara menyeluruh agar gusi tetap sehat dan terhindar dari bau mulut.</p>
+                </div>
+                <a href="https://api.whatsapp.com/send/?phone=62895340872504&text=Halo%20Admin%20Joydent,%20saya%20ingin%20tanya%20layanan%20Scaling" class="service-link" target="_blank">Konsultasi Layanan <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card-modern">
+                <div>
+                    <div class="service-icon"><i class="fas fa-fill-drip"></i></div>
+                    <h3>Penambalan Gigi Estetis</h3>
+                    <p>Menambal gigi berlubang menggunakan bahan komposit sewarna asli gigi dengan hasil tidak kasat mata.</p>
+                </div>
+                <a href="https://api.whatsapp.com/send/?phone=62895340872504&text=Halo%20Admin%20Joydent,%20saya%20ingin%20tanya%20Tambal%20Gigi" class="service-link" target="_blank">Konsultasi Layanan <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card-modern">
+                <div>
+                    <div class="service-icon"><i class="fas fa-briefcase-medical"></i></div>
+                    <h3>Pencabutan Gigi</h3>
+                    <p>Prosedur pencabutan gigi rusak atau gigi bungsu yang nyeri dengan teknik anestesi yang aman dan minim sakit.</p>
+                </div>
+                <a href="https://api.whatsapp.com/send/?phone=62895340872504&text=Halo%20Admin%20Joydent,%20saya%20ingin%20tanya%20Cabut%20Gigi" class="service-link" target="_blank">Konsultasi Layanan <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card-modern">
+                <div>
+                    <div class="service-icon"><i class="fas fa-teeth-open"></i></div>
+                    <h3>Gigi Tiruan / Palsu</h3>
+                    <p>Pembuatan gigi tiruan sebagian maupun penuh untuk mengembalikan fungsi kunyah dan percaya diri Anda.</p>
+                </div>
+                <a href="https://api.whatsapp.com/send/?phone=62895340872504&text=Halo%20Admin%20Joydent,%20saya%20ingin%20tanya%20Gigi%20Tiruan" class="service-link" target="_blank">Konsultasi Layanan <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section class="features-section" id="keunggulan">
+        <div class="section-title">
+            <span>Mengapa Memilih Kami</span>
+            <h2>Keunggulan Joydent Dental Care</h2>
+        </div>
+
+        <div class="features-flex">
+            <div class="feature-item">
+                <h3><i class="fas fa-user-md"></i> Dokter Profesional</h3>
+                <p>Tim dokter gigi terlatih, komunikatif, dan memprioritaskan kenyamanan serta kepuasan pasien.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="fas fa-shield-virus"></i> Higienis & Steril</h3>
+                <p>Seluruh instrumen medis melalui proses sterilisasi standar ketat untuk menjamin keamanan tindakan.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="fas fa-clock"></i> Buka Setiap Hari</h3>
+                <p>Jadwal praktik fleksibel dari Senin hingga Minggu untuk menyesuaikan waktu senggang Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Dokter -->
+    <section class="doctors-section" id="dokter">
+        <div class="section-title">
+            <span>Tenaga Medis</span>
+            <h2>Tim Dokter Gigi Joydent Dental Care</h2>
+        </div>
+
+        <div class="swiper swiper-container-doctors">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="doctor-box">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dokter Gigi Joydent">
+                        <div class="doctor-box-info">
+                            <h3>Tim Dokter Gigi Umum & Estetika</h3>
+                            <p>Joydent Dental Care</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="doctor-box">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dokter Spesialis Behel">
+                        <div class="doctor-box-info">
+                            <h3>Tim Spesialis Perataan Gigi</h3>
+                            <p>Joydent Dental Care</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="doctor-box">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80" alt="Tim Medis Joydent">
+                        <div class="doctor-box-info">
+                            <h3>Tim Perawat & Asisten Medis</h3>
+                            <p>Ramah & Berpengalaman</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination doctors-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Media Sosial Banner -->
+    <section class="social-banner-section">
+        <div class="section-title" style="margin-bottom: 1rem;">
+            <span>Ikuti Media Sosial Kami</span>
+            <h2>Temukan Edukasi & Promo Di Media Sosial</h2>
+        </div>
+        <div class="social-cards-wrapper">
+            <a href="https://www.tiktok.com/@joydent.dentalcare" target="_blank" class="social-card tiktok">
+                <i class="fab fa-tiktok"></i> @joydent.dentalcare
+            </a>
+            <a href="https://www.instagram.com/joydent.dentalcare" target="_blank" class="social-card instagram">
+                <i class="fab fa-instagram"></i> joydent.dentalcare
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="faq-section" id="faq">
+        <div class="section-title">
+            <span>Pertanyaan Umum</span>
+            <h2>Pertanyaan yang Sering Diajukan</h2>
+        </div>
+
+        <div class="faq-wrapper">
+            <div class="faq-card">
+                <button class="faq-btn">
+                    Apa saja jam operasional Joydent Dental Care?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-content">
+                    <p>Klinik kami buka setiap hari dengan jadwal:<br>- Senin s/d Sabtu: 09.00 - 21.00 WIB<br>- Minggu: 15.00 - 21.00 WIB</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <button class="faq-btn">
+                    Dimana lokasi pastiJoydent Dental Care Palangkaraya?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-content">
+                    <p>Lokasi kami berada di Indomaret Point Rajawali (Belakang), Jl. Rajawali Induk No.03 KM.4,5, Kec. Jekan Raya, Kota Palangka Raya, Kalimantan Tengah 73112.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <button class="faq-btn">
+                    Bagaimana cara reservasi jadwal pemeriksaan?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-content">
+                    <p>Anda bisa langsung melakukan pemesanan jadwal via WhatsApp di nomor +62 895-3408-72504 agar mendapatkan antrean yang nyaman.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Map Section (Resmi Joydent Dental Care Google Maps) -->
+    <section class="location-section" id="lokasi">
+        <div class="location-container">
+            <div class="location-details">
+                <h3>Kunjungi Joydent Dental Care</h3>
+                
+                <div class="location-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Alamat Praktik:</strong><br>
+                        Joydent Dental Care, Indomaret Point Rajawali, Jl. Rajawali Induk No.03 KM.4,5 (Belakang), Kec. Jekan Raya, Kota Palangka Raya, Kalimantan Tengah 73112
+                    </div>
+                </div>
+
+                <div class="location-item">
+                    <i class="far fa-clock"></i>
+                    <div>
+                        <strong>Jam Operasional:</strong><br>
+                        - Senin - Sabtu (09.00 - 21.00 WIB)<br>
+                        - Minggu (15.00 - 21.00 WIB)
+                    </div>
+                </div>
+
+                <div class="location-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <strong>Reservasi WhatsApp:</strong><br>
+                        +62 895-3408-72504
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; display: flex; gap: 10px; flex-wrap: wrap;">
+                    <a href="https://www.google.com/maps/place/Joydent+Dental+Care+(Praktik+Dokter+Gigi+Palangkaraya)/@-2.1835856,113.884368,17z" target="_blank" class="btn-primary" style="background: var(--brand-navy);">
+                        <i class="fas fa-directions"></i> Buka Peta di Google Maps
+                    </a>
+                    <a href="https://api.whatsapp.com/send/?phone=62895340872504" target="_blank" class="btn-wa-style">
+                        <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="map-frame">
+                <!-- Google Maps Embed Joydent Dental Care (-2.1835856, 113.884368) -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.918942125199!2d113.884368!3d-2.1835856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dfcb36504456b07%3A0x5d50927f812f5074!2sJoydent%20Dental%20Care%20(Praktik%20Dokter%20Gigi%20Palangkaraya)!5e0!3m2!1sid!2sid!4v1726580000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Modern -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <!-- Logo Gambar Saja Pada Footer -->
+                <img src="logo.png" alt="Logo Joydent Dental Care" class="footer-logo-img">
+                <p>✨ Your Smile is Our Priority. Dokter Gigi & Estetika Gigi terpercaya di Palangkaraya. Berkomitmen memberikan perawatan gigi bermutu tinggi dengan kenyamanan penuh untuk Anda.</p>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Navigasi</h4>
+                <div class="footer-links">
+                    <a href="#beranda">Beranda</a>
+                    <a href="#tentang">Tentang Kami</a>
+                    <a href="#layanan">Layanan Gigi</a>
+                    <a href="#dokter">Tim Dokter</a>
+                    <a href="#faq">Pertanyaan (FAQ)</a>
+                    <a href="#lokasi">Kontak & Peta</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Kontak Praktik</h4>
+                <div class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Jl. Rajawali Induk No.03 KM.4,5 (Belakang Indomaret Point), Palangkaraya</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+62 895-3408-72504</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-text">
+            Copyright © 2026 - Joydent Dental Care Palangkaraya. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Toggle Menu Mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // FAQ Accordion
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.classList.toggle('active');
+                const content = btn.nextElementSibling;
+                if (btn.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0';
+                }
+            });
+        });
+
+        // Swiper Doctors
+        const swiperDoctors = new Swiper('.swiper-container-doctors', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.doctors-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                }
+            }
+        });
+    </script>
+</body>
+</html>
